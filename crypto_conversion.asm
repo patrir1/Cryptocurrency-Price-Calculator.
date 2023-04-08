@@ -11,16 +11,16 @@ section .text
 
 ; Función que convierte de USD a ARS
 convert_to_ars:
-    ; Cargar el valor de USD a convertir en el coprocesador de punto flotante
-    fld dword [esp+4]
-    ; Cargar la tasa de conversión de USD a ARS en el coprocesador de punto flotante
-    fld dword [usd_to_ars_conversion_rate]
-    ; Multiplicar los valores en el coprocesador de punto flotante
-    fmul
-    ; Almacenar el resultado en la ubicación de memoria correspondiente en la pila
-    fstp dword [esp+8]
-    ; Devolver el control al código que llamó a esta función
-    ret 8
+   push   ebp
+   mov    ebp,esp
+   sub    esp,0x4
+   fld    dword  [ebp+0xc]
+   fld    dword  [ebp+0x8]
+   fmulp st1, st0
+   fstp   dword  [ebp-0x4]
+   fld    dword  [ebp-0x4]
+   leave
+   ret
 
 ; Función que convierte de USD a USD (esto es inútil, pero está aquí como ejemplo)
 convert_to_usd:

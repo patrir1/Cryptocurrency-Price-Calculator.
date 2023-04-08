@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -std=c11 -m32
+CFLAGS=-Wall -Wextra -std=c11 -m32 -g -fno-pie
 LDFLAGS=-lm
 
 all: main
