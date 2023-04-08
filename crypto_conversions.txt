@@ -1,6 +1,0 @@
-Bitcoin price in ARS: 2702868.50
-Bitcoin price in USD: 2702868.50
-Bitcoin price in EUR: 23247.47
-Ethereum price in ARS: 180213.75
-Ethereum price in USD: 180213.75
-Ethereum price in EUR: 1550.03
