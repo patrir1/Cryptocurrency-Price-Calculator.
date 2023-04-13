@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -std=c11 -m32 -g -fno-pie
+CFLAGS=-Wall -Wextra -std=c11 -m64 -g
 LDFLAGS=-lm
 
 all: main
@@ -11,7 +11,7 @@ main.o: main.c
 	$(CC) $(CFLAGS) -c $<
 
 crypto_conversion.o: crypto_conversion.asm
-	nasm -f elf32 -o $@ $<
+	nasm -f elf64 -o $@ $<
 
 clean:
 	rm -f *.o main
