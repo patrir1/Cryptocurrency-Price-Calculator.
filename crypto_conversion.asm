@@ -1,8 +1,8 @@
-global convert
-
 section .text
+   global convert
 
 ; Funcion de conversion
+
 convert:
    push   ebp
    mov    ebp,esp
@@ -12,3 +12,4 @@ convert:
    fmulp  st1, st0
    leave
    ret
+   

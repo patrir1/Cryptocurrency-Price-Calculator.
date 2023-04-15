@@ -35,7 +35,14 @@ def main(argv):
         print("Bitcoin price USD: $%.2f" % btc_price)
         print("Ethereum price USD: $%.2f" % eth_price)
 
-        subprocess.run(['./main', str(eth_price), str(btc_price)])
+        try: 
+            subprocess.run(['./main', str(eth_price), str(btc_price)])
+        except FileNotFoundError:
+            print("\nEjecutable main no encontrado\n")
+        try:
+            subprocess.run(['./main64', str(eth_price), str(btc_price)])
+        except FileNotFoundError:
+            print("\nEjecutable main64 no encontrado\n")
     else:
         print('Error al obtener los precios')
         return 1
