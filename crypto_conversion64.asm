@@ -37,7 +37,8 @@ otherConvert64:
       movss  [rbp-0x08], xmm5 ; xmm5 almacena el sexto parametro
       movss  xmm0, [rbp-0x04] ; movemos el 1er valor dentro del stack a xmm0
       mulss  xmm0, [rbp-0x08] ; multiplicamos el 6to valor dentro del stack al xmm0
-      pop    rbp
+      leave
+      ;pop    rbp
       ret
 
       ;--------------------------------------------------
